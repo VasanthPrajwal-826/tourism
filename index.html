@@ -110,24 +110,40 @@
     <!-- Booking Section -->
     <h2 id="booking">Book Your Trip</h2>
 
-    <form id="form">
-        <input type="text" id="name" placeholder="Enter your name" required><br>
-        <input type="date" id="date" required><br>
-        <p id="result" style="color:green; font-weight:bold;"></p>
-        <input type="number" id="people" placeholder="Number of People" required><br>
+    <form id="form" action="success.html">
+    <input type="text" id="name" placeholder="Enter your name" required><br>
 
-        <select id="place" required>
-            <option value="">Select Place</option>
-            <option>Ooty</option>
-            <option>Kodaikanal</option>
-            <option>Coonoor</option>
-            <option>Yercaud</option>
-        </select><br>
+    <input type="date" id="date" required><br>
+
+    <p id="result" style="color:green; font-weight:bold;"></p>
+
+    <input type="number" id="people" placeholder="Number of People" required><br>
+
+    <select id="place" required>
+        <option value="">Select Place</option>
+        <option>Ooty</option>
+        <option>Kodaikanal</option>
+        <option>Coonoor</option>
+        <option>Yercaud</option>
+    </select><br>
+
+    <button type="submit">Submit</button>
+</form>
 
         
-       <button type="submit">Submit</button>
+       <input type="date" id="date" required><br>
 
-       <p id="result" style="color:green; font-weight:bold;"></p>
+<p id="result" style="color:green; font-weight:bold;"></p>  <!-- KEEP -->
+
+<input type="number" id="people" placeholder="Number of People" required><br>
+
+<select id="place" required>
+...
+</select><br>
+
+<button type="submit">Submit</button>
+
+<!-- REMOVE duplicate result here -->
 
 </form>
 
@@ -138,29 +154,32 @@
     <h2>Scan to Book</h2>
 <img src="qr.svg" width="120">
 <p>Scan this QR code to open booking page on mobile</p>
-<form action="success.html"></form>
 
     <script>
-        function selectPlace(placeName) {
-            document.getElementById("place").value = placeName;
-            document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
-        }
+function selectPlace(placeName) {
+    document.getElementById("place").value = placeName;
+    document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
+}
 
-        document.getElementById("form").addEventListener("submit", function(e) {
-            e.preventDefault();
+document.getElementById("form").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop normal submit
 
-            let name = document.getElementById("name").value;
-            let place = document.getElementById("place").value;
-            let date = document.getElementById("date").value;
-            let people = document.getElementById("people").value;
-            document.getElementById("result").innerText =
-    "Booking Confirmed! Name: " + name +
-    ", Place: " + place +
-    ", Date: " + date +
-    ", People: " + people;
-    document.getElementById("form").reset();
-        });
-    </script>
+    let name = document.getElementById("name").value;
+    let place = document.getElementById("place").value;
+    let date = document.getElementById("date").value;
+    let people = document.getElementById("people").value;
 
+    document.getElementById("result").innerText =
+        "Booking Confirmed! Name: " + name +
+        ", Place: " + place +
+        ", Date: " + date +
+        ", People: " + people;
+
+    // wait 2 seconds then go to next page
+    setTimeout(function() {
+        window.location.href = "success.html";
+    }, 2000);
+});
+</script>
 </body>
 </html>
