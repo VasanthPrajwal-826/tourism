@@ -4,170 +4,138 @@
     <title>Tamil Nadu Tourism</title>
 
     <style>
-        body {
-            font-family: Arial;
-            background-color: #e6f2ff;
-            text-align: center;
+        body{
+            font-family:Arial;
+            background:#e6f2ff;
+            text-align:center;
         }
 
-        h1 {
-            color: #003366;
+        h1,h2{
+            color:#003366;
         }
 
-        h2 {
-            color: #003366;
+        .place{
+            width:260px;
+            background:white;
+            border-radius:10px;
+            padding:15px;
+            margin:20px;
+            display:inline-block;
         }
 
-        .place {
-            margin: 20px;
-            padding: 15px;
-            border: 1px solid gray;
-            display: inline-block;
-            background-color: white;
-            border-radius: 10px;
-            width: 260px;
-            transition: 0.3s;
+        .place img{
+            width:100%;
+            height:150px;
+            border-radius:5px;
         }
 
-        .place:hover {
-            transform: scale(1.05);
+        button{
+            background:#003366;
+            color:white;
+            padding:10px 15px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
         }
 
-        img {
-            width: 100%;
-            height: 150px;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #003366;
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        input, select {
-            padding: 10px;
-            width: 220px;
-            margin: 8px;
-            border-radius: 5px;
-            border: 1px solid gray;
-        }
-
-        form {
-            margin-top: 20px;
+        input,select{
+            width:220px;
+            padding:10px;
+            margin:8px;
         }
     </style>
 </head>
 
 <body>
 
-<nav style="background:#003366; padding:10px;">
-    <a href="#" style="color:white; margin:10px;">Home</a>
-    <a href="#booking" style="color:white; margin:10px;">Booking</a>
-    <a href="#contact" style="color:white; margin:10px;">Contact</a>
-</nav>
-
 <h1>Explore Tamil Nadu Tourism</h1>
-    <!-- Ooty -->
-    <div class="place">
-        <h2>Ooty</h2>
-        <img src="ooty.jpg">
-        <p>Beautiful hill station with cool climate.</p>
-        <p><b>Starting from ₹3000</b></p>
-        <button onclick="selectPlace('Ooty')">Book Now</button>
-    </div>
 
-    <!-- Kodaikanal -->
-    <div class="place">
-        <h2>Kodaikanal</h2>
-        <img src="kodaikanal.jpg">
-        <p>Famous for lakes and scenic views.</p>
-        <p><b>Starting from ₹3500</b></p>
-        <button onclick="selectPlace('Kodaikanal')">Book Now</button>
-    </div>
+<!-- OOTY -->
+<div class="place">
+    <h2>Ooty</h2>
+    <img src="ooty.jpg">
+    <p>Beautiful hill station with cool climate.</p>
+    <p><b>Starting from ₹3000</b></p>
 
-    <!-- Coonoor -->
-    <div class="place">
-        <h2>Coonoor</h2>
-        <img src="coonoor.jpg">
-        <p>Known for tea gardens and peaceful views.</p>
-        <p><b>Starting from ₹2500</b></p>
-        <button onclick="selectPlace('Coonoor')">Book Now</button>
-    </div>
+    <button onclick="location.href='ooty.html'">
+        View Details
+    </button>
+</div>
 
-    <!-- Yercaud -->
-    <div class="place">
-        <h2>Yercaud</h2>
-        <img src="Yercaud.jpg">
-        <p>Beautiful hill station in Salem district.</p>
-        <p><b>Starting from ₹2000</b></p>
-        <button onclick="selectPlace('Yercaud')">Book Now</button>
-    </div>
+<!-- KODAIKANAL -->
+<div class="place">
+    <h2>Kodaikanal</h2>
+    <img src="kodaikanal.jpg">
+    <p>Famous for lakes and scenic views.</p>
+    <p><b>Starting from ₹3500</b></p>
 
-    <!-- Booking Section -->
-    <h2 id="booking">Book Your Trip</h2>
+    <button onclick="location.href='kodaikanal.html'">
+        View Details
+    </button>
+</div>
 
-    <form id="form" action="success.html" method="get">
+<!-- COONOOR -->
+<div class="place">
+    <h2>Coonoor</h2>
+    <img src="coonoor.jpg">
+    <p>Known for tea gardens.</p>
+    <p><b>Starting from ₹2500</b></p>
 
-    <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+    <button onclick="location.href='coonoor.html'">
+        View Details
+    </button>
+</div>
 
-    <input type="date" id="date" name="date" required><br>
+<!-- YERCAUD -->
+<div class="place">
+    <h2>Yercaud</h2>
+    <img src="Yercaud.jpg">
+    <p>Beautiful hill station.</p>
+    <p><b>Starting from ₹2000</b></p>
 
-    <p id="result" style="color:green; font-weight:bold;"></p>
+    <button onclick="location.href='yercaud.html'">
+        View Details
+    </button>
+</div>
 
-    <input type="number" id="people" name="people" placeholder="Number of People" required><br>
+<!-- BOOKING + QR -->
+<div style="display:flex; justify-content:center; gap:50px; margin-top:40px;">
 
-    <select id="place" name="place" required>
-        <option value="">Select Place</option>
-        <option>Ooty</option>
-        <option>Kodaikanal</option>
-        <option>Coonoor</option>
-        <option>Yercaud</option>
-    </select><br>
+<div>
+<h2>Book Your Trip</h2>
 
-    <button type="submit">Submit</button>
+<form action="success.html">
+
+<input type="text" placeholder="Enter Name" required><br>
+
+<input type="date" required><br>
+
+<input type="number" placeholder="Members" required><br>
+
+<select required>
+<option>Select Place</option>
+<option>Ooty</option>
+<option>Kodaikanal</option>
+<option>Coonoor</option>
+<option>Yercaud</option>
+</select><br>
+
+<button type="submit">Submit</button>
+
 </form>
+</div>
 
-<!-- REMOVE duplicate result here -->
+<!-- QR -->
+<div>
+<h2>Scan QR</h2>
 
-</form>
+<img src="qr.svg" width="150">
 
-    <!-- Contact Section -->
-    <h2 id="contact">Contact Us</h2>
-    <p>Email: tourism@gmail.com</p>
-    <p>Phone: 9880759515</p>
-    <h2>Scan to Book</h2>
-<img src="qr.svg" width="120">
-<p>Scan this QR code to open booking page on mobile</p>
+<p>Scan to open website on mobile</p>
 
-    <script>
-function selectPlace(placeName) {
-    document.getElementById("place").value = placeName;
-    document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
-}
+</div>
 
-document.getElementById("form").addEventListener("submit", function(e) {
-    e.preventDefault(); // stop normal submit
+</div>
 
-    let name = document.getElementById("name").value;
-    let place = document.getElementById("place").value;
-    let date = document.getElementById("date").value;
-    let people = document.getElementById("people").value;
-
-    document.getElementById("result").innerText =
-        "Booking Confirmed! Name: " + name +
-        ", Place: " + place +
-        ", Date: " + date +
-        ", People: " + people;
-
-    // wait 2 seconds then go to next page
-    setTimeout(function() {
-        window.location.href = "success.html";
-    }, 2000);
-});
-</script>
 </body>
 </html>
