@@ -104,7 +104,7 @@
 <div>
 <h2>Book Your Trip</h2>
 
-<form action="success.html">
+<form id="bookingForm">
 
 <input type="text" placeholder="Enter Name" required><br>
 
@@ -136,6 +136,31 @@
 </div>
 
 </div>
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    let place = document.querySelector("select").value;
+
+    if(place === "Ooty"){
+        window.location.href = "ooty.html";
+    }
+
+    else if(place === "Kodaikanal"){
+        window.location.href = "kodaikanal.html";
+    }
+
+    else if(place === "Coonoor"){
+        window.location.href = "coonoor.html";
+    }
+
+    else if(place === "Yercaud"){
+        window.location.href = "yercaud.html";
+    }
+
+});
+</script>
 
 </body>
 </html>
