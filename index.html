@@ -154,41 +154,33 @@
         </div>
 
         <!-- QR -->
-        <div class="qr-box">
-
-            <h2>Scan QR</h2>
-
-            <img src="qr.svg" width="150" alt="QR Code">
-
-            <p>Scan to open website on mobile</p>
-
-        </div>
 
     </div>
 
     <script>
 
-        document.getElementById("bookingForm").addEventListener("submit", function (e) {
 
-            e.preventDefault();
+document.getElementById("bookingForm").addEventListener("submit", function (e) {
 
-            let page = document.getElementById("placeSelect").value;
+    e.preventDefault();
 
-            if (page !== "") {
+    let page = document.getElementById("placeSelect").value;
 
-                localStorage.setItem("selectedPlace", page);
+    if (page !== "") {
 
-                window.location.href = "success.html";
+        window.location.href = page;
 
-            } else {
+    }
 
-                alert("Please select a place");
+    else {
 
-            }
+        alert("Please select a place");
 
-        });
+    }
 
-    </script>
+});
+
+</script>    
 
 </body>
 
