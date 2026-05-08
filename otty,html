@@ -37,11 +37,24 @@
 <p>🛵 Bike - ₹800/day</p>
 <p>🚗 Car - ₹2000/day</p>
 
-<br>
-
 <a href="index.html">
 <button>Back Home</button>
 </a>
+<br><br>
+
+<h2>Book Your Ooty Trip</h2>
+
+<a href="success.html">
+<button>Book Now</button>
+</a>
+
+<br><br>
+
+<h3>Scan QR</h3>
+
+<img src="qr.svg" width="150">
+
+<p>Scan to open website on mobile</p>
 
 </body>
 </html>
